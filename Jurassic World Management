@@ -1,0 +1,62 @@
+def unlock(a):
+    x=int(input("Enter the passcode: "))
+    if x==a:
+        print("Access Granted....")
+        return True
+    if x!=a:
+        print("Incorrect Passcode\n ")
+        return False
+        
+def choice1():
+    global p1
+    global p2
+    global p3
+    global p4
+    print("\nGate Menu....")
+    print("\n1. Paddock 1 - " + p1 + "\n2. Paddock 2 - " + p2 + "\n3. Paddock 3 - " + p3 + "\n4. Paddock 4 -  " + p4 + "\n5. Return")
+    x=int(input("Which gate: "))
+    if x==1 and p1.upper()=="CLOSED":
+        print("Opening Paddock 1....")
+        p1="OPEN"
+    elif x==1 and p1.upper()=="OPEN":
+        print("Closing Paddock 1....")
+        p1="CLOSED"
+    if x==2 and p2.upper()=="CLOSED":
+        print("Opening Paddock 2....")
+        p2="OPEN"
+    elif x==2 and p2.upper()=="OPEN":
+        print("Closing Paddock 2....")
+        p2="CLOSED"
+    if x==3 and p3.upper()=="CLOSED":
+        print("Opening Paddock 3....")
+        p3="OPEN"
+    elif x==3 and p3.upper()=="OPEN":
+        print("Closing Paddock 3....")
+        p3="CLOSED"
+    if x==4 and p4.upper()=="CLOSED":
+        print("Opening Paddock 4....")
+        p4="OPEN"
+    elif x==4 and p4.upper()=="OPEN":
+        print("Closing Paddock 4....")
+        p4="CLOSED"
+        
+
+p1="CLOSED"
+p2="CLOSED"
+p3="CLOSED"
+p4="CLOSED"
+
+choice=0
+passcode=1234
+unlocked=False
+
+while unlocked==False:
+    unlocked=(unlock(passcode))
+
+while unlocked==True:
+    print("\n1. Gate Menu\n2. Asset Security")
+    choice=int(input("What is your choice: "))
+    if choice==1:
+        choice1()
+    if choice==2:
+        choice2()
